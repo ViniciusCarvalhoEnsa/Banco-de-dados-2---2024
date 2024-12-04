@@ -26,6 +26,7 @@ class PokemonCLI(SimpleCLI):
         self.add_command("read", self.read_pokemon)
         self.add_command("update", self.update_pokemon)
         self.add_command("delete", self.delete_pokemon)
+        self.add_command("play", self.play_game)
     
     def create_pokemon(self):
         name = input(colored("[+] Entre com o nome do Pokemon, de preferencia em ingles: ","light_yellow"))
@@ -52,6 +53,9 @@ class PokemonCLI(SimpleCLI):
     def delete_pokemon(self):
         name = input(colored("[+] Entre com o nome do Pokemon, de preferencia em ingles, do Pokemon que deseja deletar: ", "light_yellow"))
         self.pokemon_db.delete_pokemon(name)
+
+    def play_game(self):
+        print(colored("Para jogar, digite quit.", "red"))
 
     def run(self):
         print("                                  ,'\\")
